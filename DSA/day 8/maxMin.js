@@ -52,4 +52,42 @@ Output 2:
 
 
 */
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
 
+let inputString = '';
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function main() {
+  // Write your code here
+  // Use console.log to output the result
+// console.log(inputString)
+
+let a = (inputString[0].split(" ").map(x=>+x))
+
+let t = a.shift()
+// console.log(a)
+
+ let max =1 , min = 1000;
+  for (let i = 0; i< t; i++){
+      
+      if(a[i]> max && a[i]<=1000){
+          max = a[i]
+      }
+ if(a[i]< min && a[i]>=1){
+min = a[i]
+ }
+  }
+
+
+console.log(max + " " + min)
+}
