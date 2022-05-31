@@ -59,3 +59,41 @@ The sum of all elements of A[1 ... 1] = 2 = 2.
 The sum of all elements of A[2 ... 3] = 2 + 2 = 4.
 
 */
+module.exports = { 
+ //param A : array of integers
+ //param B : array of array of integers
+ //return a array of long integers
+	rangeSum : function(A, B){
+    //     let prefixSum = []
+    // for (let i = 0; i< A.length; i++){
+    //       prefixSum.push(0);
+    //   }
+    //   console.log(prefixSum)
+    //     //  console.log(B.length)
+    //     let ans = [];
+    //     for(let i = B.length; i>0; B--){
+    //         console.log(prefixSum[i][1])
+    //         ans = ans.push(prefixSum[i][1]-1 - prefixSum[i][0]-2)
+    //         console.log(ans)
+    //     }
+            
+        
+	// }
+    let pre = [];
+	     for(let i = 0; i <= A.length ; i++)
+	        pre.push(0n);
+	     let ans = [];
+	     
+	     for( let i = 0; i < A.length ; i++) {
+	         pre[i+1] = pre[i];
+	         pre[i+1] = pre[i+1] + A[i];
+	     }
+	     
+	     for( let i = 0; i < B.length ; i++) {
+	        ans.push(pre[B[i][1]] - pre[B[i][0]-1]);
+	     }
+	     
+	     return ans;
+	}
+};
+
