@@ -63,3 +63,33 @@ Explanation 2:
 
 See Expected Output
 */
+
+module.exports = { 
+ //param A : array of integers
+ //param B : integer
+ //return an integer
+	solve : function(A, B){
+        let operations = 0, exists= false;
+        // console.log('B', B)
+        for(let i = 0; i< A.length; i++){
+            // console.log('A[i]', A[i])
+            
+            if(A[i]=== B){
+                // console.log(A[i])
+                exists = true
+            }
+        }
+        // console.log(exists)
+        if(exists === true){
+        for(let i = 0; i< A.length; i++){
+            //  console.log(A[i])
+            if(A[i]> B){
+                // console.log(A[i])
+                operations++
+            }
+        }}
+        if(operations>0) {return operations;}
+        else {return  -1}
+	}
+};
+
