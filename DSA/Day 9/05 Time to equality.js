@@ -35,3 +35,16 @@ Example Output
 Example Explanation
 We can change the array A = [4, 4, 4, 4, 4]. The time required will be 8 seconds.
 */
+module.exports = { 
+ //param A : array of integers
+ //return an integer
+	solve : function(A){
+        let count = 0;
+        // console.log('A', A)
+        let max = Math.max.apply(null,A)
+             for(let j = 0; j< A.length; j++){
+                 count += (max - A[j])
+             }
+         return count
+	}
+};
