@@ -33,3 +33,19 @@ Output 2:
     [10, 50, 5, 50]
 See Expected Output
 */
+module.exports = { 
+ //param A : array of integers
+ //return a array of integers
+	solve : function(A){
+        let product=1;
+        for(let i = 0; i < A.length; i++){
+            product*= A[i]
+        }
+        let array = new Array()
+        for(let i = 0; i < A.length; i++){
+            array.push(product /A[i] )
+        }
+        return array
+	}
+};
+
